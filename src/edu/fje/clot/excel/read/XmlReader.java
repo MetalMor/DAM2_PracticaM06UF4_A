@@ -9,24 +9,26 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import jxl.Sheet;
+import jxl.Workbook;
 
 /**
  *
  * @author m0r
  */
-public class XmlReader extends XmlFile {
+public class XmlReader implements XmlFile {
+    private Workbook _wb;
     
     public XmlReader(File file) {
-        super(file);
+        setFile(file);
     }
     
     public XmlReader(String filePath) {
-        super(filePath);
+        setFile(filePath);
     }
     
     public List<Evaluation> getEvaluations() {
         List<Evaluation> evaluations = new ArrayList<>();
-        Sheet sheet = getWorkbook().getSheet(0);
+        Sheet sheet = _wb.getSheet(0);
         DecimalFormatSymbols symbols = new DecimalFormatSymbols();
         symbols.setDecimalSeparator(',');
         DecimalFormat format = new DecimalFormat("0.#");
@@ -44,5 +46,19 @@ public class XmlReader extends XmlFile {
             evaluations.add(new Evaluation(name, evaluation));
         }
         return evaluations;
+    }
+    
+    @Override
+    public final void setFile(File file) {
+        try {
+        _wb = Workbook.getWorkbook(file);
+        } catch (Exception ex) {
+            System.err.println("Could not read file: " + file.getPath());
+        }
+    }
+    
+    @Override
+    public final void setFile(String filePath) {
+        setFile(new File(filePath));
     }
 }

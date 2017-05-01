@@ -2,6 +2,7 @@ package edu.fje.clot.excel.main;
 
 import edu.fje.clot.excel.Evaluation;
 import edu.fje.clot.excel.read.XmlReader;
+import edu.fje.clot.excel.write.XmlWriter;
 import java.util.List;
 import java.util.Map;
 
@@ -19,10 +20,9 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        XmlReader reader = new XmlReader(INPUT_FILE_PATH);
-        List<Evaluation> evaluations = reader.getEvaluations();
-        for (Evaluation evaluation : evaluations)
-            System.out.println(evaluation.getName() + ": " + evaluation.getEvaluation());
+        new XmlWriter(OUTPUT_FILE_PATH).writeEvaluations(
+                new XmlReader(INPUT_FILE_PATH).getEvaluations()
+        );
     }
     
 }
