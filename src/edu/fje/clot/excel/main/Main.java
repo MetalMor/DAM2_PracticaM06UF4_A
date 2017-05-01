@@ -13,7 +13,7 @@ import java.util.Map;
 public class Main {
     
     private static final String USER_HOME_DIR_PATH = System.getProperty("user.home");
-    private static final String INPUT_FILE_PATH = USER_HOME_DIR_PATH + "/Documentos/cole/Notes_2DAM_M06UF1_2016_17.xls";
+    private static final String INPUT_FILE_PATH = USER_HOME_DIR_PATH + "/Notes_2DAM_M06UF1_2016_17.xls";
     private static final String OUTPUT_FILE_PATH = USER_HOME_DIR_PATH + "/M06UF1_NotesExamenFinal.xls";
 
     /**
