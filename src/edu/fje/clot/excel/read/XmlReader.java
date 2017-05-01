@@ -51,7 +51,7 @@ public class XmlReader implements XmlFile {
     @Override
     public final void setFile(File file) {
         try {
-        _wb = Workbook.getWorkbook(file);
+            _wb = Workbook.getWorkbook(file);
         } catch (Exception ex) {
             System.err.println("Could not read file: " + file.getPath());
         }
