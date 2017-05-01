@@ -1,10 +1,7 @@
 package edu.fje.clot.excel.main;
 
-import edu.fje.clot.excel.Evaluation;
 import edu.fje.clot.excel.read.XmlReader;
 import edu.fje.clot.excel.write.XmlWriter;
-import java.util.List;
-import java.util.Map;
 
 /**
  *
