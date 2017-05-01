@@ -3,3 +3,5 @@ nbproject
 .git
 test
 build.xml
+/dist/
+jxl.jar
