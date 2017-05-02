@@ -51,7 +51,7 @@ public class XmlWriter implements XmlFile {
             _wb.write();
             _wb.close();
         } catch (Exception ex) {
-            System.err.println("Could not close XLS file.");
+            System.err.println("Could not write XLS file.");
         }
     }
     
